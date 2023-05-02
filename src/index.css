@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  }
+body {
+  font-family: Roboto;
+}
+
+code {
+  background-color: #fdf6e3;
+  color: #586e75;
+}
+
+/* applies to whole viz */
+#container{
+  margin: auto;
+  width: 90%;
+}
+
+/* heading */
+#heading{
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  font-size:3rem;
+  font-weight: bold;
+}
+
+/*leaderboard css */
+
+#leaderboard{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#first{
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#data1{
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+#second{
+  padding-top: 3rem;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#data2{
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+#third{
+  padding-top: 3rem;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#data3{
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+/*rest of the scoreboard */
+#not_toppers {
+  border-collapse: collapse;
+  width: 100%;
+}
+  
+#not_toppers th,
+td {
+  border: 1px solid #aaa;
+  padding: 5px;
+  text-align: center;
+}

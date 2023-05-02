@@ -1,0 +1,52 @@
+body {
+  font-family: Roboto;
+}
+
+code {
+  background-color: #fdf6e3;
+  color: #586e75;
+}
+
+/* applies to whole viz */
+#container{
+  margin: auto;
+  width: 90%;
+}
+
+/* top 3 */
+#top3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+#top3 li{
+  padding: 2rem 4rem;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#first{
+}
+
+#second{
+  margin-top: 3rem;
+}
+
+#third{
+  margin-top: 3rem;
+}
+
+/*rest of the scoreboard */
+#not_toppers {
+  border-collapse: collapse;
+  width: 100%;
+}
+  
+#not_toppers th,
+td {
+  border: 1px solid #aaa;
+  padding: 5px;
+  text-align: center;
+}
