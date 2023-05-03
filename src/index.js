@@ -1,10 +1,13 @@
 const dscc = require('@google/dscc');
 const viz = require('@google/dscc-scripts/viz/initialViz.js');
 const local = require('./localMessage.js');
+
+// change this to 'true' for local development
+// change this to 'false' before deployment
 export const LOCAL = true;
 
 // parse the style value
-const styleVal = (message, styleId) => {
+/*const styleVal = (message, styleId) => {
   if (typeof message.style[styleId].defaultValue === "object") {
     return message.style[styleId].value.color !== undefined
       ? message.style[styleId].value.color
@@ -13,13 +16,16 @@ const styleVal = (message, styleId) => {
   return message.style[styleId].value !== undefined
     ? message.style[styleId].value
     : message.style[styleId].defaultValue;
-};
+};*/
 
 // write viz code here
 const drawViz = (data) => {
   //viz.readmeViz();
   //console.log("helo")
   //viz.firstViz(data);
+  //var dsccTableTransformObject = data.tables.DEFAULT;
+  //var headers = dsccTableTransformObject.headers;
+  //console.log(dsccTableTransformObject)
 
   //setting up crown svg
   const iconSvg1 = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -30,8 +36,8 @@ const drawViz = (data) => {
 
   iconSvg1.setAttribute('fill', '#F8B64C');
   iconSvg1.setAttribute('viewBox', '0 0 64 64');
-  iconSvg1.setAttribute('width', '40');
-  iconSvg1.setAttribute('height', '40');
+  iconSvg1.setAttribute('width', '60');
+  iconSvg1.setAttribute('height', '60');
   //iconSvg.classList.add('post-icon');
 
   iconPath1.setAttribute(
@@ -53,8 +59,8 @@ const drawViz = (data) => {
 
   iconSvg2.setAttribute('fill', '#bcbcbc');
   iconSvg2.setAttribute('viewBox', '0 0 64 64');
-  iconSvg2.setAttribute('width', '40');
-  iconSvg2.setAttribute('height', '40');
+  iconSvg2.setAttribute('width', '50');
+  iconSvg2.setAttribute('height', '50');
   //iconSvg.classList.add('post-icon');
 
   iconPath2.setAttribute(
@@ -127,7 +133,7 @@ const drawViz = (data) => {
   crown1.appendChild(iconSvg1)
   let name1= document.createElement("div")
   name1.class= "name"
-  name1.textContent= `${arr[0]}`
+  name1.textContent= `${arr[0][0]}`
   let data1= document.createElement("div")
   data1.id= "data1"
   data1.textContent= "some data1"
@@ -143,7 +149,7 @@ const drawViz = (data) => {
   crown2.appendChild(iconSvg2)
   let name2= document.createElement("div")
   name2.class= "name"
-  name2.textContent= `${arr[2]}`
+  name2.textContent= `${arr[2][0]}`
   let data2= document.createElement("div")
   data2.id= "data2"
   data2.textContent= "some data2"
@@ -159,7 +165,7 @@ const drawViz = (data) => {
   crown3.appendChild(iconSvg3)
   let name3= document.createElement("div")
   name3.class= "name"
-  name3.textContent= `${arr[4]}`
+  name3.textContent= `${arr[4][0]}`
   let data3= document.createElement("div")
   data3.id= "data3"
   data3.textContent= "some data3"
@@ -180,24 +186,50 @@ const drawViz = (data) => {
   const tableBody = document.createElement('tbody');
 
   //adding headings
-  const tableColumn1 = document.createElement('th');
-  tableColumn1.textContent = "Students"
+
+  /*const tableColumn1 = document.createElement('th');
+  tableColumn1.textContent = "Name"
   tableHeader.appendChild(tableColumn1);
 
   const tableColumn2 = document.createElement('th');
-  tableColumn2.textContent = "Scores"
+  tableColumn2.textContent = "Email"
   tableHeader.appendChild(tableColumn2);
 
+  const tableColumn3 = document.createElement('th');
+  tableColumn3.textContent = "Cohort"
+  tableHeader.appendChild(tableColumn3);
+
+  const tableColumn4 = document.createElement('th');
+  tableColumn4.textContent = "Capstone Done"
+  tableHeader.appendChild(tableColumn4);
+
+  const tableColumn5 = document.createElement('th');
+  tableColumn5.textContent = "Score"
+  tableHeader.appendChild(tableColumn5);*/
+
+
+//rendering the data
   data.tables.DEFAULT.forEach(function(value, index) {
-    //console.log(value)
-    const tableRow = document.createElement('tr');
-    Object.values(value).forEach((element)=> {
-      const tableCell = document.createElement('td')
-      tableCell.textContent = element
-      tableRow.appendChild(tableCell);
-      //console.log(element)
+    let tableRow = document.createElement('tr');
+    //console.log(value.tableDimension)
+    
+    Object.values(value).forEach((elements)=> {
+      //console.log(elements)
+      elements.forEach((cell)=> {
+        
+        /*if(cell==="Name" || cell==="Email" ||cell==="Cohort" ||cell==="Capstone Done" ||cell==="Score"){
+          const th = document.createElement('th');
+          th.textContent = cell
+          tableHeader.appendChild(th);
+        }
+        else{*/
+          let tableCell = document.createElement('td')
+          tableCell.textContent = cell
+          tableRow.appendChild(tableCell);
+        }
+      )
   });
-  tableBody.appendChild(tableRow);
+    tableBody.appendChild(tableRow);
   });
   
   table.appendChild(tableHeader);

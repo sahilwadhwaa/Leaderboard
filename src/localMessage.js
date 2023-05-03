@@ -1,44 +1,226 @@
+
 export const message = {
   "tables": {
     "DEFAULT": [
+      
       {
         "tableDimension": [
-          "Mehak"
+          "Name15",
+          "name15@gmail.com",
+          "Cohort3"
         ],
         "tableMetric": [
-          100
+          3,
+          999
         ]
       },
       {
         "tableDimension": [
-          "Sahil"
+          "Name10",
+          "name10@gmail.com",
+          "Cohort1"
         ],
         "tableMetric": [
-          42
+          3,
+          999
         ]
       },
       {
         "tableDimension": [
-          "Michael"
+          "Name11",
+          "name11@gmail.com",
+          "Cohort2"
         ],
         "tableMetric": [
-          36
+          3,
+          999
         ]
       },
       {
         "tableDimension": [
-          "Thomas"
+          "Name6",
+          "name6@gmail.com",
+          "Cohort3"
         ],
         "tableMetric": [
-          20
+          3,
+          998
         ]
       },
       {
         "tableDimension": [
-          "Lisa"
+          "Name20",
+          "name20@gmail.com",
+          "Cohort2"
         ],
         "tableMetric": [
-          10
+          3,
+          998
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name18",
+          "name18@gmail.com",
+          "Cohort3"
+        ],
+        "tableMetric": [
+          2,
+          997
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name2",
+          "name2@gmail.com",
+          "Cohort2"
+        ],
+        "tableMetric": [
+          3,
+          997
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name8",
+          "name8@gmail.com",
+          "Cohort2"
+        ],
+        "tableMetric": [
+          2,
+          997
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name3",
+          "name3@gmail.com",
+          "Cohort3"
+        ],
+        "tableMetric": [
+          3,
+          996
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name14",
+          "name14@gmail.com",
+          "Cohort2"
+        ],
+        "tableMetric": [
+          2,
+          996
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name13",
+          "name13@gmail.com",
+          "Cohort1"
+        ],
+        "tableMetric": [
+          3,
+          995
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name5",
+          "name5@gmail.com",
+          "Cohort2"
+        ],
+        "tableMetric": [
+          3,
+          995
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name4",
+          "name4@gmail.com",
+          "Cohort1"
+        ],
+        "tableMetric": [
+          3,
+          995
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name12",
+          "name12@gmail.com",
+          "Cohort3"
+        ],
+        "tableMetric": [
+          2,
+          994
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name1",
+          "name1@gmail.com",
+          "Cohort1"
+        ],
+        "tableMetric": [
+          3,
+          994
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name19",
+          "name19@gmail.com",
+          "Cohort1"
+        ],
+        "tableMetric": [
+          3,
+          992
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name17",
+          "name17@gmail.com",
+          "Cohort2"
+        ],
+        "tableMetric": [
+          3,
+          992
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name9",
+          "name9@gmail.com",
+          "Cohort3"
+        ],
+        "tableMetric": [
+          2,
+          992
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name16",
+          "name16@gmail.com",
+          "Cohort1"
+        ],
+        "tableMetric": [
+          2,
+          991
+        ]
+      },
+      {
+        "tableDimension": [
+          "Name7",
+          "name7@gmail.com",
+          "Cohort1"
+        ],
+        "tableMetric": [
+          3,
+          990
         ]
       }
     ]
@@ -46,15 +228,33 @@ export const message = {
   "fields": {
     "tableDimension": [
       {
-        "id": "qt_binj3vmk5c",
-        "name": "Player",
+        "id": "qt_40jlseer5c",
+        "name": "Name",
+        "type": "TEXT",
+        "concept": "DIMENSION"
+      },
+      {
+        "id": "qt_70gl0eer5c",
+        "name": "Email",
+        "type": "TEXT",
+        "concept": "DIMENSION"
+      },
+      {
+        "id": "qt_muze2eer5c",
+        "name": "Cohort",
         "type": "TEXT",
         "concept": "DIMENSION"
       }
     ],
     "tableMetric": [
       {
-        "id": "qt_49nj3vmk5c",
+        "id": "qt_xg5j6eer5c",
+        "name": "Capstone Done",
+        "type": "NUMBER",
+        "concept": "METRIC"
+      },
+      {
+        "id": "qt_klxc9eer5c",
         "name": "Score",
         "type": "NUMBER",
         "concept": "METRIC"
@@ -248,5 +448,12 @@ export const message = {
       "color": "#d1d1d1"
     }
   },
-  "interactions": {}
+  "interactions": {
+    "interactionsConfigId": {
+      "value": {},
+      "supportedActions": [
+        "FILTER"
+      ]
+    }
+  }
 };
