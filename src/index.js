@@ -4,7 +4,7 @@ const local = require('./localMessage.js');
 
 // change this to 'true' for local development
 // change this to 'false' before deployment
-export const LOCAL = true;
+export const LOCAL = false;
 
 // parse the style value
 /*const styleVal = (message, styleId) => {
@@ -207,6 +207,16 @@ const drawViz = (data) => {
   tableColumn5.textContent = "Score"
   tableHeader.appendChild(tableColumn5);*/
 
+  //rendering the headers
+  Object.values(data.fields).forEach((elements) =>{
+    //console.log(elements)
+    elements.forEach((headers)=>{
+      //console.log(headers)
+      let th = document.createElement('th');
+      th.textContent = headers.name
+      tableHeader.appendChild(th);
+    })
+  })
 
 //rendering the data
   data.tables.DEFAULT.forEach(function(value, index) {

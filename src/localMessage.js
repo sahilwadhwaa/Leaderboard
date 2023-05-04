@@ -1,8 +1,6 @@
-
 export const message = {
   "tables": {
     "DEFAULT": [
-      
       {
         "tableDimension": [
           "Name15",
@@ -228,19 +226,19 @@ export const message = {
   "fields": {
     "tableDimension": [
       {
-        "id": "qt_40jlseer5c",
+        "id": "qt_jnye7zlr5c",
         "name": "Name",
         "type": "TEXT",
         "concept": "DIMENSION"
       },
       {
-        "id": "qt_70gl0eer5c",
+        "id": "qt_6utke0lr5c",
         "name": "Email",
         "type": "TEXT",
         "concept": "DIMENSION"
       },
       {
-        "id": "qt_muze2eer5c",
+        "id": "qt_v9bcj0lr5c",
         "name": "Cohort",
         "type": "TEXT",
         "concept": "DIMENSION"
@@ -248,13 +246,13 @@ export const message = {
     ],
     "tableMetric": [
       {
-        "id": "qt_xg5j6eer5c",
+        "id": "qt_5nngp0lr5c",
         "name": "Capstone Done",
         "type": "NUMBER",
         "concept": "METRIC"
       },
       {
-        "id": "qt_klxc9eer5c",
+        "id": "qt_w2drm0lr5c",
         "name": "Score",
         "type": "NUMBER",
         "concept": "METRIC"
