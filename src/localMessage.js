@@ -226,19 +226,19 @@ export const message = {
   "fields": {
     "tableDimension": [
       {
-        "id": "qt_75u9w32w5c",
+        "id": "qt_90k0yh4w5c",
         "name": "Name",
         "type": "TEXT",
         "concept": "DIMENSION"
       },
       {
-        "id": "qt_gtal632w5c",
+        "id": "qt_2bab5h4w5c",
         "name": "Email",
         "type": "TEXT",
         "concept": "DIMENSION"
       },
       {
-        "id": "qt_l5qp832w5c",
+        "id": "qt_77d36h4w5c",
         "name": "Cohort",
         "type": "TEXT",
         "concept": "DIMENSION"
@@ -246,13 +246,13 @@ export const message = {
     ],
     "tableMetric": [
       {
-        "id": "qt_6zu7a42w5c",
+        "id": "qt_4fh78h4w5c",
         "name": "Score",
         "type": "NUMBER",
         "concept": "METRIC"
       },
       {
-        "id": "qt_p6kde42w5c",
+        "id": "qt_bnctci4w5c",
         "name": "Capstone Done",
         "type": "NUMBER",
         "concept": "METRIC"
@@ -269,6 +269,10 @@ export const message = {
       }
     },
     "showBoard": {
+      "value": true,
+      "defaultValue": true
+    },
+    "rowNum": {
       "value": true,
       "defaultValue": true
     }

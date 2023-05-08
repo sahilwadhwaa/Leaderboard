@@ -4,7 +4,7 @@ const local = require('./localMessage.js');
 
 // change this to 'true' for local development
 // change this to 'false' before deployment
-export const LOCAL = false;
+export const LOCAL = true;
 
 // parse the style value
 /*const styleVal = (message, styleId) => {
@@ -21,7 +21,8 @@ export const LOCAL = false;
 // write viz code here
 const drawViz = (data) => {
   //viz.readmeViz();
-  console.log(data)
+  //console.log(data.tables.DEFAULT.length)
+  //console.log(data)
   //viz.firstViz(data);
   //var dsccTableTransformObject = data.tables.DEFAULT;
   //var headers = dsccTableTransformObject.headers;
@@ -199,7 +200,7 @@ const drawViz = (data) => {
 //rendering the data
   data.tables.DEFAULT.forEach(function(value, index) {
     let tableRow = document.createElement('tr');
-    //console.log(value.tableDimension)
+    //console.log(value)
     
     Object.values(value).forEach((elements)=> {
       //console.log(elements)
@@ -224,6 +225,10 @@ const drawViz = (data) => {
   }else {
     leaderboard.style.display= "none"
   }
+
+  /*if(data.style.rowNum.value === false){
+    not_toppers.style.display= "none"
+  }*/
 
   //render the table
   container.appendChild(table);

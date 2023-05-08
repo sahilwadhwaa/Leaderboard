@@ -46,17 +46,17 @@
           ]
       },
       {
-        "id": "body",
+        "id": "text",
         "label": "Table Body",
-        "elements": [
+        "elements" : [
             {
-              "type": "CHECKBOX",
-              "id": "rowNum",
-              "label": "Row Numbers",
-              "defaultValue": true
-            }
+            "type": "CHECKBOX",
+            "id": "rowNum",
+            "label": "Row numbers",
+            "defaultValue": true
+          }
         ]
-    }
+      }
   ],
   "interactions": [
     {
