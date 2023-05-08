@@ -21,7 +21,7 @@ export const LOCAL = false;
 // write viz code here
 const drawViz = (data) => {
   //viz.readmeViz();
-  //console.log("helo")
+  console.log(data)
   //viz.firstViz(data);
   //var dsccTableTransformObject = data.tables.DEFAULT;
   //var headers = dsccTableTransformObject.headers;
@@ -134,12 +134,12 @@ const drawViz = (data) => {
   let name1= document.createElement("div")
   name1.class= "name"
   name1.textContent= `${arr[0][0]}`
-  let data1= document.createElement("div")
+  /*let data1= document.createElement("div")
   data1.id= "data1"
-  data1.textContent= "some data1"
+  data1.textContent= "some data1"*/
   first.appendChild(crown1)
   first.appendChild(name1)
-  first.appendChild(data1)
+  //first.appendChild(data1)
 
   //second position
   let second=document.createElement('div')
@@ -150,12 +150,12 @@ const drawViz = (data) => {
   let name2= document.createElement("div")
   name2.class= "name"
   name2.textContent= `${arr[2][0]}`
-  let data2= document.createElement("div")
+  /*let data2= document.createElement("div")
   data2.id= "data2"
-  data2.textContent= "some data2"
+  data2.textContent= "some data2"*/
   second.appendChild(crown2)
   second.appendChild(name2)
-  second.appendChild(data2)
+  //second.appendChild(data2)
 
   //third position
   let third=document.createElement('div')
@@ -166,12 +166,12 @@ const drawViz = (data) => {
   let name3= document.createElement("div")
   name3.class= "name"
   name3.textContent= `${arr[4][0]}`
-  let data3= document.createElement("div")
+  /*let data3= document.createElement("div")
   data3.id= "data3"
-  data3.textContent= "some data3"
+  data3.textContent= "some data3"*/
   third.appendChild(crown3)
   third.appendChild(name3)
-  third.appendChild(data3)
+  //third.appendChild(data3)
   
   //appending everything to the DOM
   leaderboard.appendChild(second)
@@ -184,28 +184,6 @@ const drawViz = (data) => {
   table.id= "not_toppers"
   const tableHeader = document.createElement('thead');
   const tableBody = document.createElement('tbody');
-
-  //adding headings
-
-  /*const tableColumn1 = document.createElement('th');
-  tableColumn1.textContent = "Name"
-  tableHeader.appendChild(tableColumn1);
-
-  const tableColumn2 = document.createElement('th');
-  tableColumn2.textContent = "Email"
-  tableHeader.appendChild(tableColumn2);
-
-  const tableColumn3 = document.createElement('th');
-  tableColumn3.textContent = "Cohort"
-  tableHeader.appendChild(tableColumn3);
-
-  const tableColumn4 = document.createElement('th');
-  tableColumn4.textContent = "Capstone Done"
-  tableHeader.appendChild(tableColumn4);
-
-  const tableColumn5 = document.createElement('th');
-  tableColumn5.textContent = "Score"
-  tableHeader.appendChild(tableColumn5);*/
 
   //rendering the headers
   Object.values(data.fields).forEach((elements) =>{
@@ -226,13 +204,6 @@ const drawViz = (data) => {
     Object.values(value).forEach((elements)=> {
       //console.log(elements)
       elements.forEach((cell)=> {
-        
-        /*if(cell==="Name" || cell==="Email" ||cell==="Cohort" ||cell==="Capstone Done" ||cell==="Score"){
-          const th = document.createElement('th');
-          th.textContent = cell
-          tableHeader.appendChild(th);
-        }
-        else{*/
           let tableCell = document.createElement('td')
           tableCell.textContent = cell
           tableRow.appendChild(tableCell);
@@ -247,6 +218,12 @@ const drawViz = (data) => {
 
   // Set header color based on style control.
   tableHeader.style.backgroundColor = data.style.headerBg.value.color;
+  //data.style.showBoard.value === true ? leaderboard.style.display= "flex" ? leaderboard.style.display= "none"
+  if(data.style.showBoard.value === true){
+    leaderboard.style.display= "flex"
+  }else {
+    leaderboard.style.display= "none"
+  }
 
   //render the table
   container.appendChild(table);

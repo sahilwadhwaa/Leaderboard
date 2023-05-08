@@ -8,8 +8,8 @@ export const message = {
           "Cohort3"
         ],
         "tableMetric": [
-          3,
-          999
+          999,
+          3
         ]
       },
       {
@@ -19,8 +19,8 @@ export const message = {
           "Cohort1"
         ],
         "tableMetric": [
-          3,
-          999
+          999,
+          3
         ]
       },
       {
@@ -30,8 +30,8 @@ export const message = {
           "Cohort2"
         ],
         "tableMetric": [
-          3,
-          999
+          999,
+          3
         ]
       },
       {
@@ -41,8 +41,8 @@ export const message = {
           "Cohort3"
         ],
         "tableMetric": [
-          3,
-          998
+          998,
+          3
         ]
       },
       {
@@ -52,8 +52,8 @@ export const message = {
           "Cohort2"
         ],
         "tableMetric": [
-          3,
-          998
+          998,
+          3
         ]
       },
       {
@@ -63,8 +63,8 @@ export const message = {
           "Cohort3"
         ],
         "tableMetric": [
-          2,
-          997
+          997,
+          2
         ]
       },
       {
@@ -74,8 +74,8 @@ export const message = {
           "Cohort2"
         ],
         "tableMetric": [
-          3,
-          997
+          997,
+          3
         ]
       },
       {
@@ -85,8 +85,8 @@ export const message = {
           "Cohort2"
         ],
         "tableMetric": [
-          2,
-          997
+          997,
+          2
         ]
       },
       {
@@ -96,8 +96,8 @@ export const message = {
           "Cohort3"
         ],
         "tableMetric": [
-          3,
-          996
+          996,
+          3
         ]
       },
       {
@@ -107,8 +107,8 @@ export const message = {
           "Cohort2"
         ],
         "tableMetric": [
-          2,
-          996
+          996,
+          2
         ]
       },
       {
@@ -118,8 +118,8 @@ export const message = {
           "Cohort1"
         ],
         "tableMetric": [
-          3,
-          995
+          995,
+          3
         ]
       },
       {
@@ -129,8 +129,8 @@ export const message = {
           "Cohort2"
         ],
         "tableMetric": [
-          3,
-          995
+          995,
+          3
         ]
       },
       {
@@ -140,8 +140,8 @@ export const message = {
           "Cohort1"
         ],
         "tableMetric": [
-          3,
-          995
+          995,
+          3
         ]
       },
       {
@@ -151,8 +151,8 @@ export const message = {
           "Cohort3"
         ],
         "tableMetric": [
-          2,
-          994
+          994,
+          2
         ]
       },
       {
@@ -162,8 +162,8 @@ export const message = {
           "Cohort1"
         ],
         "tableMetric": [
-          3,
-          994
+          994,
+          3
         ]
       },
       {
@@ -173,8 +173,8 @@ export const message = {
           "Cohort1"
         ],
         "tableMetric": [
-          3,
-          992
+          992,
+          3
         ]
       },
       {
@@ -184,8 +184,8 @@ export const message = {
           "Cohort2"
         ],
         "tableMetric": [
-          3,
-          992
+          992,
+          3
         ]
       },
       {
@@ -195,8 +195,8 @@ export const message = {
           "Cohort3"
         ],
         "tableMetric": [
-          2,
-          992
+          992,
+          2
         ]
       },
       {
@@ -206,8 +206,8 @@ export const message = {
           "Cohort1"
         ],
         "tableMetric": [
-          2,
-          991
+          991,
+          2
         ]
       },
       {
@@ -217,8 +217,8 @@ export const message = {
           "Cohort1"
         ],
         "tableMetric": [
-          3,
-          990
+          990,
+          3
         ]
       }
     ]
@@ -226,19 +226,19 @@ export const message = {
   "fields": {
     "tableDimension": [
       {
-        "id": "qt_jnye7zlr5c",
+        "id": "qt_75u9w32w5c",
         "name": "Name",
         "type": "TEXT",
         "concept": "DIMENSION"
       },
       {
-        "id": "qt_6utke0lr5c",
+        "id": "qt_gtal632w5c",
         "name": "Email",
         "type": "TEXT",
         "concept": "DIMENSION"
       },
       {
-        "id": "qt_v9bcj0lr5c",
+        "id": "qt_l5qp832w5c",
         "name": "Cohort",
         "type": "TEXT",
         "concept": "DIMENSION"
@@ -246,14 +246,14 @@ export const message = {
     ],
     "tableMetric": [
       {
-        "id": "qt_5nngp0lr5c",
-        "name": "Capstone Done",
+        "id": "qt_6zu7a42w5c",
+        "name": "Score",
         "type": "NUMBER",
         "concept": "METRIC"
       },
       {
-        "id": "qt_w2drm0lr5c",
-        "name": "Score",
+        "id": "qt_p6kde42w5c",
+        "name": "Capstone Done",
         "type": "NUMBER",
         "concept": "METRIC"
       }
@@ -267,6 +267,10 @@ export const message = {
       "defaultValue": {
         "color": "#e0e0e0"
       }
+    },
+    "showBoard": {
+      "value": true,
+      "defaultValue": true
     }
   },
   "theme": {

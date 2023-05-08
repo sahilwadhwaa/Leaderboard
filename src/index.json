@@ -36,9 +36,27 @@
                   "id": "headerBg",
                   "label": "Header Background Color",
                   "defaultValue": "#e0e0e0"
+              },
+              {
+                "type": "CHECKBOX",
+                "id": "showBoard",
+                "label": "Show Header",
+                "defaultValue": true
               }
           ]
-      }
+      },
+      {
+        "id": "body",
+        "label": "Table Body",
+        "elements": [
+            {
+              "type": "CHECKBOX",
+              "id": "rowNum",
+              "label": "Row Numbers",
+              "defaultValue": true
+            }
+        ]
+    }
   ],
   "interactions": [
     {
