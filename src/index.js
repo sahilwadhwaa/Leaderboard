@@ -122,6 +122,13 @@ const drawViz = (data) => {
   });
   //console.log(arr)
 
+  let tableData= [];
+  data.tables.DEFAULT.forEach(function(value, index) {
+    //console.log(value)
+    tableData.push(value)
+  });
+  console.log(tableData)
+
   //leaderboard
   let leaderboard= document.createElement("div")
   leaderboard.id="leaderboard"
@@ -187,6 +194,10 @@ const drawViz = (data) => {
   const tableBody = document.createElement('tbody');
 
   //rendering the headers
+  let th = document.createElement('th');
+  th.textContent = "SNo."
+  tableHeader.appendChild(th);
+
   Object.values(data.fields).forEach((elements) =>{
     //console.log(elements)
     elements.forEach((headers)=>{
@@ -197,10 +208,14 @@ const drawViz = (data) => {
     })
   })
 
+  let count=1;
 //rendering the data
-  data.tables.DEFAULT.forEach(function(value, index) {
+  tableData.forEach(function(value, index) {
     let tableRow = document.createElement('tr');
     //console.log(value)
+    let tableCell = document.createElement('td');
+    tableCell.textContent = count++;
+    tableRow.appendChild(tableCell);
     
     Object.values(value).forEach((elements)=> {
       //console.log(elements)

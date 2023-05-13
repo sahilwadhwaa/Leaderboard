@@ -44,18 +44,6 @@
                 "defaultValue": true
               }
           ]
-      },
-      {
-        "id": "text",
-        "label": "Table Body",
-        "elements" : [
-            {
-            "type": "CHECKBOX",
-            "id": "rowNum",
-            "label": "Row numbers",
-            "defaultValue": true
-          }
-        ]
       }
   ],
   "interactions": [
