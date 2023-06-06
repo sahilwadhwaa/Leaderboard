@@ -20,7 +20,7 @@ export const message = {
         ],
         "tableMetric": [
           999,
-          3
+          66774
         ]
       },
       {
@@ -64,7 +64,7 @@ export const message = {
         ],
         "tableMetric": [
           997,
-          2
+          254000
         ]
       },
       {
@@ -86,7 +86,7 @@ export const message = {
         ],
         "tableMetric": [
           997,
-          2
+          455000
         ]
       },
       {
@@ -97,7 +97,7 @@ export const message = {
         ],
         "tableMetric": [
           996,
-          3
+          67000
         ]
       },
       {
@@ -108,7 +108,7 @@ export const message = {
         ],
         "tableMetric": [
           996,
-          2
+          344667
         ]
       },
       {
@@ -163,7 +163,7 @@ export const message = {
         ],
         "tableMetric": [
           994,
-          3
+          350000
         ]
       },
       {
@@ -226,19 +226,19 @@ export const message = {
   "fields": {
     "tableDimension": [
       {
-        "id": "qt_90k0yh4w5c",
+        "id": "qt_061vybkp6c",
         "name": "Name",
         "type": "TEXT",
         "concept": "DIMENSION"
       },
       {
-        "id": "qt_2bab5h4w5c",
+        "id": "qt_tupopckp6c",
         "name": "Email",
         "type": "TEXT",
         "concept": "DIMENSION"
       },
       {
-        "id": "qt_77d36h4w5c",
+        "id": "qt_t9w2rckp6c",
         "name": "Cohort",
         "type": "TEXT",
         "concept": "DIMENSION"
@@ -246,13 +246,13 @@ export const message = {
     ],
     "tableMetric": [
       {
-        "id": "qt_4fh78h4w5c",
+        "id": "qt_rrzcuckp6c",
         "name": "Score",
         "type": "NUMBER",
         "concept": "METRIC"
       },
       {
-        "id": "qt_bnctci4w5c",
+        "id": "qt_vtz7vckp6c",
         "name": "Capstone Done",
         "type": "NUMBER",
         "concept": "METRIC"
@@ -272,9 +272,9 @@ export const message = {
       "value": true,
       "defaultValue": true
     },
-    "rowNum": {
-      "value": true,
-      "defaultValue": true
+    "tablerows": {
+      "value": 100,
+      "defaultValue": 100
     }
   },
   "theme": {

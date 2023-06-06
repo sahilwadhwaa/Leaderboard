@@ -6,29 +6,13 @@ const local = require('./localMessage.js');
 // change this to 'false' before deployment
 export const LOCAL = true;
 
-// parse the style value
-/*const styleVal = (message, styleId) => {
-  if (typeof message.style[styleId].defaultValue === "object") {
-    return message.style[styleId].value.color !== undefined
-      ? message.style[styleId].value.color
-      : message.style[styleId].defaultValue.color;
-  }
-  return message.style[styleId].value !== undefined
-    ? message.style[styleId].value
-    : message.style[styleId].defaultValue;
-};*/
-
 // write viz code here
 const drawViz = (data) => {
-  //viz.readmeViz();
-  //console.log(data.tables.DEFAULT.length)
   //console.log(data)
-  //viz.firstViz(data);
-  //var dsccTableTransformObject = data.tables.DEFAULT;
-  //var headers = dsccTableTransformObject.headers;
-  //console.log(dsccTableTransformObject)
 
   //setting up crown svg
+
+  //Gold crown
   const iconSvg1 = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   const iconPath1 = document.createElementNS(
     'http://www.w3.org/2000/svg',
@@ -50,8 +34,8 @@ const drawViz = (data) => {
   //iconPath.setAttribute('stroke-width', '2');
 
   iconSvg1.appendChild(iconPath1);
-  //container.appendChild(iconSvg)
 
+  //silver crown
   const iconSvg2 = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   const iconPath2 = document.createElementNS(
     'http://www.w3.org/2000/svg',
@@ -74,6 +58,7 @@ const drawViz = (data) => {
 
   iconSvg2.appendChild(iconPath2);
 
+  //bronze crown
   const iconSvg3 = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   const iconPath3 = document.createElementNS(
     'http://www.w3.org/2000/svg',
@@ -106,12 +91,7 @@ const drawViz = (data) => {
     document.body.appendChild(container);
   }
 
-  let heading= document.createElement("div")
-  heading.id="heading"
-  heading.textContent= "Top Performers"
-  container.appendChild(heading)
-
-  //arr for top3
+  //array for top3
   let arr= [];
 
   data.tables.DEFAULT.forEach(function(value, index) {
@@ -120,20 +100,27 @@ const drawViz = (data) => {
       arr.push(element)
     });
   });
-  //console.log(arr)
 
+  //array for storing the table data
   let tableData= [];
+  let noofrows=0;
+  //variable to store the input value which will set the number of rows to display per page
+  let perpage= Math.max(data.style.tablerows.value, 1)
+  //console.log(perpage)
   data.tables.DEFAULT.forEach(function(value, index) {
-    //console.log(value)
-    tableData.push(value)
+    if(noofrows<perpage){
+      tableData.push(value);
+      noofrows++
+    }
   });
-  console.log(tableData)
 
   //leaderboard
   let leaderboard= document.createElement("div")
   leaderboard.id="leaderboard"
 
+  //displaying top3 positions at the top
   //first position
+  let top1= tableData.slice(0, 1)
   let first=document.createElement('div')
   first.id= "first"
   let crown1=document.createElement('div')
@@ -142,14 +129,34 @@ const drawViz = (data) => {
   let name1= document.createElement("div")
   name1.class= "name"
   name1.textContent= `${arr[0][0]}`
-  /*let data1= document.createElement("div")
-  data1.id= "data1"
-  data1.textContent= "some data1"*/
+  let box1= document.createElement("div");
+  box1.id= "box"
+
+  top1.forEach(function(value, index) {
+    Object.values(value).forEach((elements)=> {
+      console.log(elements)
+      elements.forEach((cell)=> {
+        //console.log(cell)
+        if(cell !== arr[0][0]){
+          let details = document.createElement("div");
+          if(typeof cell === "number"){
+            details.textContent = cell.toLocaleString('en-IN');
+          }
+          else{
+            details.textContent = cell;
+          }
+          box1.appendChild(details);
+        }
+      })
+    });
+  });
+
   first.appendChild(crown1)
   first.appendChild(name1)
-  //first.appendChild(data1)
+  first.appendChild(box1)
 
   //second position
+  let top2= tableData.slice(1, 2)
   let second=document.createElement('div')
   second.id= "second"
   let crown2=document.createElement('div')
@@ -158,14 +165,32 @@ const drawViz = (data) => {
   let name2= document.createElement("div")
   name2.class= "name"
   name2.textContent= `${arr[2][0]}`
-  /*let data2= document.createElement("div")
-  data2.id= "data2"
-  data2.textContent= "some data2"*/
+  let box2= document.createElement("div");
+  box2.id= "box"
+
+  top2.forEach(function(value, index) {
+    Object.values(value).forEach((elements)=> {
+      elements.forEach((cell)=> {
+        //console.log(cell)
+        if(cell !== arr[2][0]){
+          let details = document.createElement("div");
+          if(typeof cell === "number"){
+            details.textContent = cell.toLocaleString('en-IN');;
+          }
+          else{
+            details.textContent = cell;
+          }
+          box2.appendChild(details);
+        }
+      })
+    });
+  });
   second.appendChild(crown2)
   second.appendChild(name2)
-  //second.appendChild(data2)
+  second.appendChild(box2)
 
   //third position
+  let top3= tableData.slice(2, 3)
   let third=document.createElement('div')
   third.id= "third"
   let crown3=document.createElement('div')
@@ -174,12 +199,30 @@ const drawViz = (data) => {
   let name3= document.createElement("div")
   name3.class= "name"
   name3.textContent= `${arr[4][0]}`
-  /*let data3= document.createElement("div")
-  data3.id= "data3"
-  data3.textContent= "some data3"*/
+  let box3= document.createElement("div");
+  box3.id= "box"
+
+  top3.forEach(function(value, index) {
+    Object.values(value).forEach((elements)=> {
+      elements.forEach((cell)=> {
+        //console.log(cell)
+        if(cell !== arr[4][0]){
+          let details = document.createElement("div");
+          if(typeof cell === "number"){
+            details.textContent = cell.toLocaleString('en-IN');;
+          }
+          else{
+            details.textContent = cell;
+          }
+          box3.appendChild(details);
+        }
+      })
+    });
+  });
+
   third.appendChild(crown3)
   third.appendChild(name3)
-  //third.appendChild(data3)
+  third.appendChild(box3)
   
   //appending everything to the DOM
   leaderboard.appendChild(second)
@@ -199,29 +242,46 @@ const drawViz = (data) => {
   tableHeader.appendChild(th);
 
   Object.values(data.fields).forEach((elements) =>{
-    //console.log(elements)
     elements.forEach((headers)=>{
-      //console.log(headers)
       let th = document.createElement('th');
       th.textContent = headers.name
       tableHeader.appendChild(th);
     })
   })
 
-  let count=1;
-//rendering the data
-  tableData.forEach(function(value, index) {
+  //logic for the Show Header checkbox in the viz
+  //flag variable to decide to render the table including top3 or not depending on the checkbox value
+  let flag;
+  //for serial number
+  let count;
+
+  if(data.style.showBoard.value === true){
+    flag=3;
+    count=4;
+    leaderboard.style.display= "flex"
+  }else {
+    flag=0;
+    count=1;
+    leaderboard.style.display= "none"
+  }
+
+
+
+  //rendering the table
+  tableData.slice(flag).forEach(function(value, index) {
     let tableRow = document.createElement('tr');
-    //console.log(value)
     let tableCell = document.createElement('td');
     tableCell.textContent = count++;
     tableRow.appendChild(tableCell);
     
     Object.values(value).forEach((elements)=> {
-      //console.log(elements)
       elements.forEach((cell)=> {
-          let tableCell = document.createElement('td')
-          tableCell.textContent = cell
+        //console.log(cell)
+          let tableCell = document.createElement('td');
+          if(typeof cell === "number"){
+            tableCell.textContent = cell.toLocaleString('en-IN');
+          }
+          else tableCell.textContent = cell;
           tableRow.appendChild(tableCell);
         }
       )
@@ -234,17 +294,7 @@ const drawViz = (data) => {
 
   // Set header color based on style control.
   tableHeader.style.backgroundColor = data.style.headerBg.value.color;
-  //data.style.showBoard.value === true ? leaderboard.style.display= "flex" ? leaderboard.style.display= "none"
-  if(data.style.showBoard.value === true){
-    leaderboard.style.display= "flex"
-  }else {
-    leaderboard.style.display= "none"
-  }
-
-  /*if(data.style.rowNum.value === false){
-    not_toppers.style.display= "none"
-  }*/
-
+  
   //render the table
   container.appendChild(table);
 };

@@ -27,24 +27,36 @@
       }
   ],
   "style": [
-      {
-          "id": "header",
-          "label": "Table Header",
-          "elements": [
-              {
-                  "type": "FILL_COLOR",
-                  "id": "headerBg",
-                  "label": "Header Background Color",
-                  "defaultValue": "#e0e0e0"
-              },
-              {
-                "type": "CHECKBOX",
-                "id": "showBoard",
-                "label": "Show Header",
-                "defaultValue": true
-              }
-          ]
-      }
+    {
+      "id": "header",
+      "label": "Table Header",
+      "elements": [
+          {
+            "type": "FILL_COLOR",
+            "id": "headerBg",
+            "label": "Header Background Color",
+            "defaultValue": "#e0e0e0"
+          },
+          {
+            "type": "CHECKBOX",
+            "id": "showBoard",
+            "label": "Show Header",
+            "defaultValue": true
+          }
+      ]
+    },
+    {
+      "id": "mainsettings",
+      "label": "Main Settings",
+      "elements": [
+        {
+          "id": "tablerows",
+          "label": "Rows per Page",
+          "defaultValue": 100,
+          "type": "INTERVAL"
+        }  
+      ]
+    } 
   ],
   "interactions": [
     {
